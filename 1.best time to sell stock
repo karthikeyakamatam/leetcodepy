@@ -1,0 +1,30 @@
+1. the question given is to find the best way for selling a stock and buying a stock.
+e.g:  Input: prices[] = {7, 1, 5, 3, 6, 4}
+Output: 5
+Explanation:6-1
+
+code in python:
+class Solution:
+    def maxProfit(self, prices: List[int]) -> int:
+        if not prices:
+            return 0
+        
+        min_price = prices[0]
+        max_profit = 0
+        
+        for price in prices[1:]:
+            if price < min_price:
+                min_price = price
+            else:
+                max_profit = max(max_profit, price - min_price)
+        
+        return max_profit
+explantion:
+here we take list of prices as input from various days.
+1.if there are no prices reurn the 0
+2. intlize the min price with the first day price
+3.intilize the max profitwith 0
+4. use for loop to iterate through the loop start from second element in price list
+5.if that day price is less than preivous day then update the min price
+6.else find the max profit by finding max of the preexisting maxprofit and thatday price and min_price
+7.return the profit
