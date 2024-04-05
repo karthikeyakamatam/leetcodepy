@@ -1,0 +1,19 @@
+we will be given a list we have to check if any one number contains a duplicate or not if any contians duplicate then retunr true or false
+  eg:Example 1:
+
+Input: nums = [1,2,3,1]
+Output: true
+Example 2:
+
+Input: nums = [1,2,3,4]
+Output: false
+
+CODE:
+Class Solution:
+   def containsduplicate(self,nums:List[int]) -> bool:
+       hashset=set()
+       for n in nums:
+          if n in hashset:
+             return True
+          hashset.add(N)
+      return False
